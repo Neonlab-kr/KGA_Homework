@@ -2,16 +2,14 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 // 추상 클래스
 class PersonInfo {
 protected:
-    string name;
-    string age;
-    string contact;
-    string address;
-    string email;
+    std::string name;
+    std::string age;
+    std::string contact;
+    std::string address;
+    std::string email;
 
 public:
     // 가상 함수
@@ -22,20 +20,20 @@ public:
 // 클래스 구현
 class KGA_StudentInfo : public PersonInfo {
 private:
-    string determination;
-    string desired_company;
-    string game_idea;
-    string hobby;
-    vector<string> header = { "이름", "나이", "연락처", "주소", "이메일", "각오", "가고 싶은 회사", "만들고 싶은 게임", "취미" };
+    std::string determination;
+    std::string desired_company;
+    std::string game_idea;
+    std::string hobby;
+    std::vector<std::string> header = { "이름", "나이", "연락처", "주소", "이메일", "각오", "가고 싶은 회사", "만들고 싶은 게임", "취미" };
 
 public:
     void GetInfo() override {
-        cout << "\n[정보 입력]\n";
+        std::cout << "\n[정보 입력]\n";
         for (int i = 0; i < header.size(); i++)
         {
-            cout << header[i] << "을(를) 입력하세요 : \n";
-            string input;
-            getline(cin, input);
+            std::cout << header[i] << "을(를) 입력하세요 : \n";
+            std::string input;
+            std::getline(std::cin, input);
 
             switch (i) {
             case 0: name = input; break;
@@ -59,26 +57,26 @@ public:
         for (std::string header : header)
             max_header_width = header.length() > max_header_width ? header.length() : max_header_width;
 
-        cout << "\n[" << name << "님의 정보]\n";
+        std::cout << "\n[" << name << "님의 정보]\n";
         for (int i = 0; i < header.size(); i++)
         {
-            cout.width(max_header_width);
-            cout << left << header[i] << " : ";
+            std::cout.width(max_header_width);
+            std::cout << std::left << header[i] << " : ";
 
             switch (i) {
-            case 0: cout << name; break;
-            case 1: cout << age; break;
-            case 2: cout << contact; break;
-            case 3: cout << address; break;
-            case 4: cout << email; break;
-            case 5: cout << determination; break;
-            case 6: cout << desired_company; break;
-            case 7: cout << game_idea; break;
-            case 8: cout << hobby; break;
+            case 0: std::cout << name; break;
+            case 1: std::cout << age; break;
+            case 2: std::cout << contact; break;
+            case 3: std::cout << address; break;
+            case 4: std::cout << email; break;
+            case 5: std::cout << determination; break;
+            case 6: std::cout << desired_company; break;
+            case 7: std::cout << game_idea; break;
+            case 8: std::cout << hobby; break;
             default: break;
             }
 
-            cout << '\n';
+            std::cout << '\n';
         }
     }
 };

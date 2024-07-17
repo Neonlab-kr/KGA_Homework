@@ -63,9 +63,9 @@ void main()
 		for (int j = 0; j < WIDTH; j++)
 		{
 			if(image[i][j])
-			std::cout << "бс ";
+			std::cout << "бс";
 			else
-			std::cout << "бр ";
+			std::cout << "бб";
 		}
 		std::cout << '\n';
 	}
