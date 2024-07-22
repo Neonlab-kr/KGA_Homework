@@ -13,6 +13,9 @@
     <Filter Include="07/19">
       <UniqueIdentifier>{76910938-8a22-4f97-b3f2-2da4037111b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07/22">
+      <UniqueIdentifier>{571e038e-bcc1-4014-ab89-a3c0d7cfbb5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0716chw1.cpp">
@@ -59,6 +62,15 @@
     </ClCompile>
     <ClCompile Include="0719chw1.cpp">
       <Filter>07/19</Filter>
+    </ClCompile>
+    <ClCompile Include="0722hw1.cpp">
+      <Filter>07/22</Filter>
+    </ClCompile>
+    <ClCompile Include="0722hw2.cpp">
+      <Filter>07/22</Filter>
+    </ClCompile>
+    <ClCompile Include="0722chw1.cpp">
+      <Filter>07/22</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
