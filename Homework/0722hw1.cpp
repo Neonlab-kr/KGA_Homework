@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include <windows.h>
+#include <Windows.h>
 
 using std::cin;
 using std::cout;
