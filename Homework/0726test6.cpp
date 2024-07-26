@@ -29,7 +29,7 @@ void main()
 			numCheck[i] = check;
 		}
 
-		if (numCheck[i])\
+		if (numCheck[i])
 		{
 			bool check = false;
 			for (int j = 0; j < 4; j++)
