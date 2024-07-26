@@ -218,5 +218,3 @@ bool isComplete(int puzzleBoard[][5])
 
 	return (result1 || result2);
 }
-
-
