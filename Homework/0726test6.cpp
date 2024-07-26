@@ -6,9 +6,9 @@ using std::endl;
 
 void main()
 {
-	int arr1[] = { 1,5,5,10 };
+	int arr1[] = { 1,5,7,10 };
 	int arr2[] = { 3,4,5,5,10 };
-	int arr3[] = { 5,5,10,20 };
+	int arr3[] = { 5,7,10,20 };
 
 	bool numCheck[21] = { false, };
 
@@ -27,8 +27,11 @@ void main()
 				if (i == arr2[j]) check = true;
 			}
 			numCheck[i] = check;
+		}
 
-			check = false;
+		if (numCheck[i])\
+		{
+			bool check = false;
 			for (int j = 0; j < 4; j++)
 			{
 				if (i == arr3[j]) check = true;
