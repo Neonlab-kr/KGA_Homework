@@ -1,34 +1,66 @@
 #include <iostream>
-void ReverseWords(char* output, int outptArraysize, const char* input);
 
+void ReverseWords(char* output, int outputArraySize, const char* input);
 
 void main()
 {
-	char* output;
-	const char* input = "Hello World this is Pearl Abyss";
+    const char* input = "Hello World this is Pearl Abyss";
+    int outputArraySize = 0;
+    char ch;
 
-	int count = 0;
-	char ch;
+    //문자열의 길이 + 1 구하기(null문자까지)
+    while ((ch = input[outputArraySize++]) != '\0');
 
-	while (ch != '\0') ch = input[count++];
+    //동적 할당
+    char* output = new char[outputArraySize];
 
-	ReverseWords(output, count, input);
+    ReverseWords(output, outputArraySize, input);
+
+    //동적 할당 메모리 해제
+    delete[] output;
 }
 
-void ReverseWords(char* output, int outptArraysize, const char* input)
+void ReverseWords(char* output, int outputArraySize, const char* input)
 {
+    // 단어의 시작과 끝을 기록할 인덱스 변수들
+    int startOfWord = outputArraySize - 2;
+    int endOfWord = outputArraySize - 2;
+    int outputIndex = 0;
+    bool flag = true;
 
-	output = new char[outptArraysize];
+    // 입력 문자열을 단어 단위 역순으로 output에 복사
+    while (startOfWord >= 0)
+    {
+        // 단어의 끝 찾기
+        while (startOfWord >= 0 && input[startOfWord] != ' ')
+        {
+            startOfWord--;
+            //첫 공백은 무시
+            if (flag && input[startOfWord] == ' ')
+            {
+                flag = false;
+                startOfWord--;
+                continue;
+            }
+        }
 
-	output[outptArraysize] = '\0';
+        // 단어를 output에 복사
+        for (int i = startOfWord + 1; i <= endOfWord; i++)
+        {
+            output[outputIndex++] = input[i];
+        }
 
-	int count = 0;
-	char ch;
+        // 공백 추가
+        if (startOfWord >= 0)
+        {
+            output[outputIndex++] = ' ';
+        }
 
-	while (ch != ' ') ch = input[count++];
+        startOfWord--;
+        endOfWord = startOfWord;
+    }
 
+    output[outputIndex] = '\0';
 
-
-
-
+    std::cout << output << std::endl;
 }

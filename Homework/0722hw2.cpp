@@ -79,7 +79,7 @@ int moneyBet(int money)
 		cout << "현재 소지금 : " << money << endl;
 		cout << "베팅하실 금액을 입력하세요(최소 1000, 현재 소지금을 넘을 순 없음.) : ";
 		cin >> bet;
-	} while (bet < 1000 && bet > money);
+	} while (bet < 1000 || bet > money);
 
 	return bet;
 }

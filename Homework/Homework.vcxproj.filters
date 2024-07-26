@@ -19,6 +19,18 @@
     <Filter Include="07/23">
       <UniqueIdentifier>{c97a42f1-e0df-438f-acdc-0fae4ef9c815}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07/24">
+      <UniqueIdentifier>{5ad3188f-f017-4dab-8533-c99305eb3ca8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07/25">
+      <UniqueIdentifier>{d7134431-cf9a-490c-a8dd-57cd1f425ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07/26~07/31">
+      <UniqueIdentifier>{109765d2-d020-40c1-ad83-4789f36cf65e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07/26Test">
+      <UniqueIdentifier>{f639bbde-5a25-4bb9-b82f-4208fbb7ce94}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0716chw1.cpp">
@@ -83,6 +95,45 @@
     </ClCompile>
     <ClCompile Include="0723hw3.cpp">
       <Filter>07/23</Filter>
+    </ClCompile>
+    <ClCompile Include="0724hw1.cpp">
+      <Filter>07/24</Filter>
+    </ClCompile>
+    <ClCompile Include="0724hw2.cpp">
+      <Filter>07/24</Filter>
+    </ClCompile>
+    <ClCompile Include="0725hw1.cpp">
+      <Filter>07/25</Filter>
+    </ClCompile>
+    <ClCompile Include="0725hw2.cpp">
+      <Filter>07/25</Filter>
+    </ClCompile>
+    <ClCompile Include="0726hw1.cpp">
+      <Filter>07/26~07/31</Filter>
+    </ClCompile>
+    <ClCompile Include="0726hw2.cpp">
+      <Filter>07/26~07/31</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test1.cpp">
+      <Filter>07/26Test</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test2.cpp">
+      <Filter>07/26Test</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test3.cpp">
+      <Filter>07/26Test</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test4.cpp">
+      <Filter>07/26Test</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test6.cpp">
+      <Filter>07/26Test</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test5.cpp">
+      <Filter>07/26Test</Filter>
+    </ClCompile>
+    <ClCompile Include="0726test7.cpp">
+      <Filter>07/26Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
