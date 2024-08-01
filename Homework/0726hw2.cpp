@@ -15,7 +15,6 @@ void slidePuzzleGame();
 void initPuzzleBoard(int puzzleBoard[][5]);
 void findAsterisk(int puzzleBoard[][5], int& x, int& y);
 void printPuzzleBoard(int puzzleBoard[][5]);
-int puzzleCheck(int puzzleBoard[][5]);
 Direction getInput();
 void swapSlide(Direction dir, int puzzleBoard[][5], int& x, int& y);
 bool isComplete(int puzzleBoard[][5]);
@@ -88,9 +87,8 @@ void findAsterisk(int puzzleBoard[][5], int& x, int& y)
 	{
 		for (x = 0; x < 5; x+=1)
 		{
-			if (puzzleBoard[y][x] == -1) break;
+			if (puzzleBoard[y][x] == -1) return;
 		}
-		if (puzzleBoard[y][x] == -1) break;
 	}
 }
 
@@ -111,11 +109,6 @@ void printPuzzleBoard(int puzzleBoard[][5])
 		}
 		cout << '\n';
 	}
-}
-
-int puzzleCheck(int puzzleBoard[][5])
-{
-	return 0;
 }
 
 Direction getInput()
@@ -150,12 +143,11 @@ Direction getInput()
 
 void swapSlide(Direction dir, int puzzleBoard[][5],int& x, int& y)
 {
-	int temp;
 	switch (dir)
 	{
 	case UP:
 		if (y == 0) break;
-		puzzleBoard[y][x] = puzzleBoard[y-1][x];
+		puzzleBoard[y][x] = puzzleBoard[y - 1][x];
 		puzzleBoard[y - 1][x] = -1;
 		y--;
 		break;
@@ -188,7 +180,7 @@ void swapSlide(Direction dir, int puzzleBoard[][5],int& x, int& y)
 
 bool isComplete(int puzzleBoard[][5])
 {
-	int result1 = true, result2 = true;
+	bool result1 = true, result2 = true;
 
 	//별표가 마지막칸인 경우
 	for (int i = 0; i < 4; i++)
