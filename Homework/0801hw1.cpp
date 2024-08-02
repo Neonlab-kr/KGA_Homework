@@ -13,20 +13,20 @@ struct Student
 };
 
 void getStudentInfo(Student* student);
-void printStudentInfo(Student* student);
+void printStudentInfo(Student& student);
 
 int main()
 {
 	Student student;
 	getStudentInfo(&student);
-	printStudentInfo(&student);
+	printStudentInfo(student);
 	return 0;
 }
 
 void getStudentInfo(Student* student)
 {
 	cout << "이름을 입력하세요 : ";
-	getline(cin, student->name);
+	getline(cin, (*student).name);
 
 	cout << "나이를 입력하세요 : ";
 	cin >> student->age;
@@ -39,10 +39,10 @@ void getStudentInfo(Student* student)
 
 }
 
-void printStudentInfo(Student* student)
+void printStudentInfo(Student& student)
 {
-	cout << "이름 : " << student->name << endl;
-	cout << "나이 : " << student->age << endl;
-	cout << "주소 : " << student->address << endl;
-	cout << "연락처 : " << student->phone << endl;
+	cout << "이름 : " << student.name << endl;
+	cout << "나이 : " << student.age << endl;
+	cout << "주소 : " << student.address << endl;
+	cout << "연락처 : " << student.phone << endl;
 }
