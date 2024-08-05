@@ -153,5 +153,8 @@
     <ClCompile Include="0802hw1_2.cpp">
       <Filter>08/02</Filter>
     </ClCompile>
+    <ClCompile Include="0802hw2_2.cpp">
+      <Filter>08/02</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -46,7 +46,7 @@ private:
 public:
 	Monster(const int atk, const int def, const int health) :mAtk(atk), mDef(def), mHealth(health)
 	{
-
+		
 	}
 
 	int getAtk() const

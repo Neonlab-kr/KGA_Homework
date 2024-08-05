@@ -15,7 +15,7 @@ private:
 	int bingoCheck();
 
 public:
-	BingoGame(const int size) :size(size)
+	BingoGame(const int size) : size(size)
 	{
 		bingoBoard = new int* [size];
 		for (int i = 0; i < size; i++)
