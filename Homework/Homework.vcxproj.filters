@@ -37,6 +37,9 @@
     <Filter Include="08/02">
       <UniqueIdentifier>{946d320f-3948-4644-91bc-fdba4ff1fa7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="08/08">
+      <UniqueIdentifier>{e032f359-966a-4fc7-8e73-499fcaf3af6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0716chw1.cpp">
@@ -155,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="0802hw2_2.cpp">
       <Filter>08/02</Filter>
+    </ClCompile>
+    <ClCompile Include="0808hw1.cpp">
+      <Filter>08/08</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

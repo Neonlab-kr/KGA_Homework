@@ -568,7 +568,7 @@ bool Battle::endCheck()
 	system("cls");
 	for (int i = 0; i < 2; i++)
 	{
-		if (player[i]->getHealth() <= 0)
+		if (player[i]->getHealth() <= 0)//isPlayerDead(){return getHealth() <= 0;}
 		{
 			cout << "player" << i + 1 << " ÆÐ¹è!" << endl;
 			return true;
