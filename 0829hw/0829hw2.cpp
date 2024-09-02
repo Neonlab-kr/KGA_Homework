@@ -78,21 +78,16 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
         case VK_UP:
         {
             int moveDis;
-            bool isCollide = rc1.right > rc2.left && rc1.bottom > rc2.top && (rc1.top - speed) < rc2.bottom && rc1.left < rc2.right;
-            if (rc1.top == 0 || (isCollide && (rc2.top == 0)))
+            if (rc1.top == 0 || ((rc1.top == rc2.bottom && rc1.right > rc2.left && rc1.left < rc2.right) && (rc2.top == 0)))
             {
                 break;
             }
-            hdc = GetDC(hWnd);
-            InvalidateRect(hWnd, &rc1, true);
-            if (isCollide)
+            if (rc1.right > rc2.left && rc1.bottom > rc2.top && (rc1.top - speed) < rc2.bottom && rc1.left < rc2.right)
             {
-                InvalidateRect(hWnd, &rc2, true);
                 moveDis = rc2.bottom - (rc1.top - speed);
                 if (rc2.top - moveDis < 0) moveDis = rc2.top;
                 rc2.top -= moveDis;
                 rc2.bottom -= moveDis;
-                DrawRectMake(hdc, rc2);
                 moveDis = rc1.top - rc2.bottom;
                 rc1.top -= moveDis;
                 rc1.bottom -= moveDis;
@@ -104,29 +99,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
                 rc1.top -= moveDis;
                 rc1.bottom -= moveDis;
             }
-            DrawRectMake(hdc, rc1);
-            ReleaseDC(hWnd, hdc);
+            InvalidateRect(hWnd, NULL, true);
         }
             break;
 
         case VK_DOWN:
         {
             int moveDis;
-            bool isCollide = rc1.right > rc2.left && (rc1.bottom + speed) > rc2.top && rc1.top < rc2.bottom && rc1.left < rc2.right;
-            if (rc1.bottom == hMax || (isCollide && (rc2.bottom == hMax)))
+            if (rc1.bottom == hMax || ((rc1.bottom == rc2.top && rc1.right > rc2.left && rc1.left < rc2.right) && (rc2.bottom == hMax)))
             {
                 break;
             }
-            hdc = GetDC(hWnd);
-            InvalidateRect(hWnd, &rc1, true);
-            if (isCollide)
+            if (rc1.right > rc2.left && (rc1.bottom + speed) > rc2.top && rc1.top < rc2.bottom && rc1.left < rc2.right)
             {
-                InvalidateRect(hWnd, &rc2, true);
                 moveDis = (rc1.bottom + speed) - rc2.top;
                 if (rc2.bottom + moveDis > hMax) moveDis = hMax - rc2.bottom;
                 rc2.bottom += moveDis;
                 rc2.top += moveDis;
-                DrawRectMake(hdc, rc2);
                 moveDis = rc2.top - rc1.bottom;
                 rc1.top += moveDis;
                 rc1.bottom += moveDis;
@@ -138,29 +127,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
                 rc1.top += moveDis;
                 rc1.bottom += moveDis;
             }
-            DrawRectMake(hdc, rc1);
-            ReleaseDC(hWnd, hdc);
+            InvalidateRect(hWnd, NULL, true);
         }
             break;
 
         case VK_LEFT:
         {
             int moveDis;
-            bool isCollide = rc1.right > rc2.left && rc1.bottom > rc2.top && rc1.top < rc2.bottom && (rc1.left - speed) < rc2.right;
-            if (rc1.left == 0 || (isCollide && (rc2.left == 0)))
+            if (rc1.left == 0 || ((rc1.left == rc2.right && rc1.bottom > rc2.top && rc1.top < rc2.bottom) && (rc2.left == 0)))
             {
                 break;
             }
-            hdc = GetDC(hWnd);
-            InvalidateRect(hWnd, &rc1, true);
-            if (isCollide)
+            if (rc1.right > rc2.left && rc1.bottom > rc2.top && rc1.top < rc2.bottom && (rc1.left - speed) < rc2.right)
             {
-                InvalidateRect(hWnd, &rc2, true);
                 int moveDis = rc2.right - (rc1.left - speed);
                 if (rc2.left - moveDis < 0) moveDis = rc2.left;
                 rc2.left -= moveDis;
                 rc2.right -= moveDis;
-                DrawRectMake(hdc, rc2);
                 moveDis = rc1.left - rc2.right;
                 rc1.left -= moveDis;
                 rc1.right -= moveDis;
@@ -172,30 +155,23 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
                 rc1.left -= moveDis;
                 rc1.right -= moveDis;
             }
-            DrawRectMake(hdc, rc1);
-            ReleaseDC(hWnd, hdc);
+            InvalidateRect(hWnd, NULL, true);
         }
             break;
 
         case VK_RIGHT:
         {
             int moveDis;
-            bool isCollide =
-                (rc1.right + speed) > rc2.left && rc1.bottom > rc2.top && rc1.top < rc2.bottom && rc1.left < rc2.right;
-            if (rc1.right == wMax || (isCollide && (rc2.right == wMax)))
+            if (rc1.right == wMax || ((rc1.right == rc2.left && rc1.bottom > rc2.top && rc1.top < rc2.bottom) && (rc2.right == wMax)))
             {
                 break;
             }
-            hdc = GetDC(hWnd);
-            InvalidateRect(hWnd, &rc1, true);
-            if (isCollide)
+            if ((rc1.right + speed) > rc2.left && rc1.bottom > rc2.top && rc1.top < rc2.bottom && rc1.left < rc2.right)
             {
-                InvalidateRect(hWnd, &rc2, true);
                 moveDis = (rc1.right + speed) - rc2.left;
                 if (rc2.right + moveDis > wMax) moveDis = wMax - rc2.right;
                 rc2.right += moveDis;
                 rc2.left += moveDis;
-                DrawRectMake(hdc, rc2);
                 moveDis = rc2.left - rc1.right;
                 rc1.left += moveDis;
                 rc1.right += moveDis;
@@ -207,8 +183,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
                 rc1.left += moveDis;
                 rc1.right += moveDis;
             }
-            DrawRectMake(hdc, rc1);
-            ReleaseDC(hWnd, hdc);
+            InvalidateRect(hWnd, NULL, true);
         }
             break;
 

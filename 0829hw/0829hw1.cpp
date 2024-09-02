@@ -55,22 +55,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
         DrawCircle(hdc,400,400,300,RGB(255,0,0));
         DrawCircle(hdc,400,400,280,RGB(255,0,0));
 
-        POINT points[6] = { PointMake(399,120),PointMake(666,312),PointMake(565,625),PointMake(236,627),PointMake(133,314),PointMake(399,120) };
+        POINT points[5] = { PointMake(399,120),PointMake(666,312),PointMake(565,625),PointMake(236,627),PointMake(133,314) };
+        POINT points2[5] = { PointMake(298,433),PointMake(400,506),PointMake(502,432),PointMake(462,313),PointMake(336,313) };
 
         //오각형
-        MoveToEx(hdc, points[0].x, points[0].y, NULL);
-        for (int i = 1; i < 6; i++)
+        MoveToEx(hdc, points[4].x, points[4].y, NULL);
+        for (int i = 0; i < 5; i++)
         {
 	        LineTo(hdc, points[i].x, points[i].y);
         }
 
-        //별
+        //외부 별
         MoveToEx(hdc, points[4].x, points[4].y, NULL);
         LineTo(hdc, points[1].x, points[1].y);
         LineTo(hdc, points[3].x, points[3].y);
         LineTo(hdc, points[0].x, points[0].y);
         LineTo(hdc, points[2].x, points[2].y);
         LineTo(hdc, points[4].x, points[4].y);
+
+        //내부 별
+        MoveToEx(hdc, points2[4].x, points2[4].y, NULL);
+        LineTo(hdc, points2[1].x, points2[1].y);
+        LineTo(hdc, points2[3].x, points2[3].y);
+        LineTo(hdc, points2[0].x, points2[0].y);
+        LineTo(hdc, points2[2].x, points2[2].y);
+        LineTo(hdc, points2[4].x, points2[4].y);
 
         EndPaint(hWnd, &ps);
     }
