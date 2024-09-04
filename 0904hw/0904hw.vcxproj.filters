@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="API FrameWork">
+      <UniqueIdentifier>{77426088-1896-46be-8522-55f4511b3d6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainClass">
+      <UniqueIdentifier>{c0dd5a14-d05c-4072-8f50-df62972ecc51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\CoreClass">
+      <UniqueIdentifier>{7f549f64-1881-44cb-bc42-aca44ef2b75e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\DesignPattern">
+      <UniqueIdentifier>{008605c7-5c99-4a56-a354-e98927343ade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\ManagerClass">
+      <UniqueIdentifier>{d0f67177-9875-44bd-a73a-12eb469c4264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\PCH">
+      <UniqueIdentifier>{3ea56b7c-3fd8-4832-832a-67a6029d426a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\Utility">
+      <UniqueIdentifier>{a72cd8ac-e8b9-4caa-9c9b-d0dc92ff6588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\WinMain">
+      <UniqueIdentifier>{6f50538f-febc-4193-b119-fe282501b983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\Utility\Math">
+      <UniqueIdentifier>{84a80c1d-1287-4094-8afd-4b481a5d5afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\DesignPattern\Singleton">
+      <UniqueIdentifier>{85d7f038-3692-465c-b90e-aefe60711f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API FrameWork\Image">
+      <UniqueIdentifier>{0ee67c00-417b-44ad-a1f7-870f1fd1f54c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>API FrameWork\CoreClass</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>API FrameWork\ManagerClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>API FrameWork\PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>API FrameWork\WinMain</Filter>
+    </ClCompile>
+    <ClCompile Include="C3DMatrix.cpp">
+      <Filter>API FrameWork\Utility\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C3DVector.cpp">
+      <Filter>API FrameWork\Utility\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="GImage.cpp">
+      <Filter>API FrameWork\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="SlidePuzzleGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniMapGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="WhirlwindBulletGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="BalckHoleGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="EarthWormGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameNode.h">
+      <Filter>API FrameWork\CoreClass</Filter>
+    </ClInclude>
+    <ClInclude Include="SingletonBase.h">
+      <Filter>API FrameWork\DesignPattern\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>API FrameWork\ManagerClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>API FrameWork\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="C3DMatrix.h">
+      <Filter>API FrameWork\Utility\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C3DVector.h">
+      <Filter>API FrameWork\Utility\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>API FrameWork\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>API FrameWork\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GImage.h">
+      <Filter>API FrameWork\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="SlidePuzzleGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniMapGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="WhirlwindBulletGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="BalckHoleGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthWormGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

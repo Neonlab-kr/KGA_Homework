@@ -61,34 +61,43 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
     case WM_PAINT:
     {
-        POINT BezierLine[10];
+        POINT BezierLine[16];
         hdc = BeginPaint(hWnd, &ps);
 
-        wsprintf(strPT, "X: %d       Y: %d", pt.x, pt.y);//숫자를 문자열로 출력할때(변환)
+        wsprintf(strPT, "X: %d       Y: %d", pt.x, pt.y);
         TextOut(hdc, 10, 10, strPT, strlen(strPT));
 
-        //EllipseMakeCenter(hdc, WINSIZE_X / 2, WINSIZE_Y / 2, 400, 600);
-        DrawRectMake(hdc, RectMake(200, 100, 400, 600));
-        Arc(hdc, 200, 100, 600, 700, 230, 200, 570, 200);
-
-
-        EllipseMakeCenter(hdc, 200, 100, 10, 10);
-        EllipseMakeCenter(hdc, 600, 700, 10, 10);
-        EllipseMakeCenter(hdc, 230, 200, 10, 10);
-        EllipseMakeCenter(hdc, 570, 200, 10, 10);
+        Arc(hdc, 200, 100, 600, 600, 230, 200, 570, 200);
 
         EllipseMake(hdc, 220, 250, 170, 170);
         EllipseMake(hdc, 410, 250, 170, 170);
-        Arc(hdc, 390, 355, 410, 335, 410, 335, 390, 335);
-        BezierLine[0] = { 100,100 };
-        BezierLine[1] = { 150,50 };
-        BezierLine[2] = { 200,50 };
-        BezierLine[3] = { 250,100 };
-        PolyBezier(hdc, BezierLine, 4);
-        for (auto& i : BezierLine)
-        {
-            EllipseMakeCenter(hdc, i.x, i.y, 10, 10);
-        }
+        Arc(hdc, 390, 345, 410, 325, 410, 325, 390, 325);
+        BezierLine[0] = { 385,290 };
+
+        BezierLine[1] = { 390,380 };
+        BezierLine[2] = { 350,390 };
+        BezierLine[3] = { 355,420 };
+
+        BezierLine[4] = { 365,430 };
+        BezierLine[5] = { 370,405 };
+        BezierLine[6] = { 390,420 };
+
+        BezierLine[7] = { 397,425 };
+        BezierLine[8] = { 404,425 };
+        BezierLine[9] = { 410,420 };
+
+        BezierLine[10] = { 430,405 };
+        BezierLine[11] = { 435,430 };
+        BezierLine[12] = { 445,420 };
+
+        BezierLine[13] = { 450,390 };
+        BezierLine[14] = { 410,380 };
+        BezierLine[15] = { 415,290 };
+        PolyBezier(hdc, BezierLine, 16);
+
+        MoveToEx(hdc, 350, 500, NULL);
+        LineTo(hdc, 450, 500);
+
         EndPaint(hWnd, &ps);
     }
     break;
