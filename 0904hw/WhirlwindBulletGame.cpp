@@ -36,9 +36,11 @@ void WhirlwindBulletGame::update(void)
         }
     }
 
+    //각도 변경
+    angle += 25;
+
     //원 생성
     Circle newCircle;
-    angle += 25;
     newCircle.cx = WINSIZE_X / 2;
     newCircle.cy = WINSIZE_Y / 2;
     newCircle.angle = angle;
