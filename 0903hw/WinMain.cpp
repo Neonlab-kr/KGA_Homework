@@ -1,5 +1,4 @@
 #include "Stdafx.h"
-//#include "MainGame.h"
 #include "MoleCatchGame.h"
 #include "ClayShootingGame.h"
 

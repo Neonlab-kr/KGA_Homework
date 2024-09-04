@@ -32,10 +32,12 @@
 #include <vector>//erase는 메모리 자체를 할당해제, clear는 메모리는 그대로 두고 데이터만 제거
 #include <map>//비선형 RedBlackTree 구조 ★★★★★
 #include <unordered_map>//해시 자료구조 -> 일반적 상황에서는 map보다 빠르고 중복 데이터를 허용하지 않는다. 단, 유사 데이터가 많다면 해시 충돌 발생 여부가 항상 존재.
+#include <list>
 #include <bitset>//비트 연산을 좀 더 사람 친화적 / 함수화 시켜놓은 STL
 #include <cassert>
 
 using std::vector;
+using std::list;
 using std::string;
 using std::wstring;
 using std::bitset;

@@ -8,7 +8,26 @@
 - 플레이어의 움직임을 미니맵에서도 확인할 수 있어야 한다.
 */
 #pragma once
-class MiniMapGame
-{
-};
+#include "GameNode.h"
 
+class MiniMapGame : public GameNode
+{
+private:
+	GImage* _bgImage;
+	GImage* _plImage;
+	GImage* _MinimapBgImage;
+	GImage* _MinimapPlImage;
+
+	RECT _rc;
+	RECT _overlayMinimapRc;
+	RECT _MinimapRc;
+
+public:
+	HRESULT init(void);
+	void release(void);
+	void update(void);
+	void render(HDC);
+
+	MiniMapGame() {}
+	~MiniMapGame() {}
+};

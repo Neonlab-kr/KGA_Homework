@@ -28,15 +28,15 @@ HRESULT SlidePuzzleGame::init(void)
 			puzzlePiece[sel].index = temp;
 		}
 
-		for (int i = 0; i < 8; i++)
+		for (int i = 7; i > 0; i--)
 		{
-			for (int j = i + 1; j < 8; j++)
+			for (int j = i - 1; j >= 0; j--)
 			{
-				if (puzzlePiece[i].index > puzzlePiece[j].index) inversion++;
+				if (puzzlePiece[j].index > puzzlePiece[i].index)
+					inversion++;
 			}
 		}
-		inversion = 0;
-		if (!(inversion % 2)) break;
+		if (inversion % 2 == 0) break;
 	}
 
 
@@ -140,6 +140,16 @@ void SlidePuzzleGame::update(void)
 		for (int i = 0; i < 10; i++)
 		{
 			if (puzzlePiece[i].index != i) GameEnd = false;
+		}
+
+		if (KEYMANAGER->isOnceKeyDown(VK_F1))
+		{
+			for (int i = 0; i < 8; i++)
+			{
+				puzzlePiece[i].index = i;
+			}
+			puzzlePiece[8].index = 9;
+			puzzlePiece[9].index = 8;
 		}
 	}
 	else

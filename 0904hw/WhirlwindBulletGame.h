@@ -9,7 +9,26 @@
 */
 
 #pragma once
-class WhirlwindBulletGame
-{
-};
+#include "GameNode.h"
 
+class WhirlwindBulletGame : public GameNode
+{
+private:
+	struct Circle
+	{
+		double cx, cy;
+		double angle;
+	};
+	list<Circle> circleList;
+
+	double angle;
+
+public:
+	HRESULT init(void);
+	void release(void);
+	void update(void);
+	void render(HDC);
+
+	WhirlwindBulletGame() {}
+	~WhirlwindBulletGame() {}
+};

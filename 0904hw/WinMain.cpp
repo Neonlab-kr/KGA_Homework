@@ -1,6 +1,8 @@
 #include "Stdafx.h"
 #include "MainGame.h"
 #include "SlidePuzzleGame.h"
+#include "MiniMapGame.h"
+#include "WhirlwindBulletGame.h"
 
 HINSTANCE _hInstance;
 HWND _hWnd;
@@ -14,7 +16,9 @@ GameNode* _mg;
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
 {
     //_mg = new MainGame();
-    _mg = new SlidePuzzleGame();
+    //_mg = new SlidePuzzleGame();
+    //_mg = new MiniMapGame();
+    _mg = new WhirlwindBulletGame();
 
     _hInstance = hInstance;
 

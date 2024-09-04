@@ -74,7 +74,6 @@ void MainGame::update(void)
     {
         _alphaA++;
         if (_alphaA >= 255) _alphaA = 0;
-        //if (_alphaA >= 255) _alphaA = _alphaA * -1;
     }
 
     _countB++;
@@ -87,13 +86,8 @@ void MainGame::update(void)
 
 void MainGame::render(HDC hdc)
 {
-    // 백버퍼 가져오기
     HDC memDC = this->getBackBuffer()->getMemDC();
-
-    // 검은색 비트맵 (빈)
     PatBlt(memDC, 0, 0, WINSIZE_X, WINSIZE_Y, BLACKNESS);
-    //====================================================================
-
     //_bgImage->render(memDC, 0, 0);
     _bgImage->alphaRender(memDC, _alphaA);
 
@@ -101,13 +95,9 @@ void MainGame::render(HDC hdc)
     {
         Rectangle(memDC, _rc.left, _rc.top, _rc.right, _rc.bottom);
     }
-
     //_plImage->render(memDC, _rc.left, _rc.top);
     //_plImage->alphaRender(memDC, _rc.left, _rc.top, _alphaB);
-
     //클리핑
     _bgImage->render(memDC, _rc.left, _rc.top, 500, 500, 300, 300);
-
-    //====================================================================
     this->getBackBuffer()->render(hdc, 0, 0);
 }
