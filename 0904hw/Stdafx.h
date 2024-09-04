@@ -13,6 +13,10 @@
 // ! Windows 헤더 파일
 #include <Windows.h>
 
+// 라이브러리
+// #pragma comment (lib, "msimg32.lib")
+
+// C 런타임 헤더파일
 #include <stdlib.h>
 #include <malloc.h>
 #include <memory.h>//메모리 함수(memcpy,memset 등)
@@ -21,6 +25,7 @@
 // MBCS(멀티바이트 캐릭터셋) / WBCS(와이드바이트 캐릭터셋)
 #include <assert.h>
 
+// C++ 런타임 헤더파일
 #include <iostream>
 #include <chrono>//시간 관련 STL으로 정밀도가 높다(나노 밀리) 또한 OS 와 독립적으로 동작한다.
 #include <random>
@@ -72,10 +77,10 @@ ID2D1HwndRenderTarget* _ID2DRenderTarget = nullptr;
 
 // 매크로
 #define WINNAME		(LPSTR)(TEXT("WindowsAPI"))
-#define WINSTART_X	0
+#define WINSTART_X	700
 #define WINSTART_Y	0
-#define WINSIZE_X	1600
-#define WINSIZE_Y	800
+#define WINSIZE_X	1000
+#define WINSIZE_Y	1000
 #define WINSTYLE	WS_CAPTION | WS_SYSMENU
 
 // 매크로 함수

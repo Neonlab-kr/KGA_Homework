@@ -1,7 +1,6 @@
 #include "Stdafx.h"
-//#include "MainGame.h"
-#include "MoleCatchGame.h"
-#include "ClayShootingGame.h"
+#include "MainGame.h"
+#include "SlidePuzzleGame.h"
 
 HINSTANCE _hInstance;
 HWND _hWnd;
@@ -10,12 +9,12 @@ POINT _ptMouse = { 0,0 };
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 void setWindowSize(int x, int y, int width, int height);
 
-GameNode* _game;
+GameNode* _mg;
 
-int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpszCmdParam,int nCmdShow)
+int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
 {
-    //_game = new MoleCatchGame();
-    _game = new ClayShootingGame();
+    //_mg = new MainGame();
+    _mg = new SlidePuzzleGame();
 
     _hInstance = hInstance;
 
@@ -30,13 +29,13 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpszCmdPa
     wndClass.lpszClassName = WINNAME;
     wndClass.lpszMenuName = NULL;
     wndClass.style = CS_HREDRAW | CS_VREDRAW;
-    
+
     RegisterClass(&wndClass);
     _hWnd = CreateWindow(WINNAME, WINNAME, WINSTYLE, WINSTART_X, WINSTART_Y, WINSIZE_X, WINSIZE_Y, NULL, (HMENU)NULL, hInstance, NULL);
     setWindowSize(WINSTART_X, WINSTART_Y, WINSIZE_X, WINSIZE_Y);
     ShowWindow(_hWnd, nCmdShow);
 
-    if (FAILED(_game->init()))
+    if (FAILED(_mg->init()))
     {
         return 0;
     }
@@ -48,15 +47,15 @@ int APIENTRY WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpszCmdPa
         DispatchMessage(&message);
     }
 
-    _game->release();
-    UnregisterClass(WINNAME, hInstance);
+    _mg->release();
+    UnregisterClass(WINNAME, hInstance);//관리클래스이므로 레지스터도 빼주겠다.
 
     return message.wParam;
 }
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
-    return _game->MainProc(hWnd, iMessage, wParam, lParam);
+    return _mg->MainProc(hWnd, iMessage, wParam, lParam);
 }
 
 void setWindowSize(int x, int y, int width, int height)

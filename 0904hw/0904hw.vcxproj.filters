@@ -32,7 +32,7 @@
       <UniqueIdentifier>{85d7f038-3692-465c-b90e-aefe60711f52}</UniqueIdentifier>
     </Filter>
     <Filter Include="API FrameWork\Image">
-      <UniqueIdentifier>{0376f5f2-e65a-4e4d-bf2f-1accf12e2ee6}</UniqueIdentifier>
+      <UniqueIdentifier>{0ee67c00-417b-44ad-a1f7-870f1fd1f54c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,15 +57,23 @@
     <ClCompile Include="MainGame.cpp">
       <Filter>MainClass</Filter>
     </ClCompile>
-    <ClCompile Include="GImage.cpp" />
-    <ClCompile Include="MoleCatchGame.cpp">
-      <Filter>MainClass</Filter>
-    </ClCompile>
-    <ClCompile Include="ClayShootingGame.cpp">
-      <Filter>MainClass</Filter>
-    </ClCompile>
     <ClCompile Include="GImage.cpp">
       <Filter>API FrameWork\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="SlidePuzzleGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniMapGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="WhirlwindBulletGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="BalckHoleGame.cpp">
+      <Filter>MainClass</Filter>
+    </ClCompile>
+    <ClCompile Include="EarthWormGame.cpp">
+      <Filter>MainClass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,15 +104,23 @@
     <ClInclude Include="RandomFunction.h">
       <Filter>API FrameWork\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="GImage.h" />
-    <ClInclude Include="MoleCatchGame.h">
-      <Filter>MainClass</Filter>
-    </ClInclude>
-    <ClInclude Include="ClayShootingGame.h">
-      <Filter>MainClass</Filter>
-    </ClInclude>
     <ClInclude Include="GImage.h">
       <Filter>API FrameWork\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="SlidePuzzleGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniMapGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="WhirlwindBulletGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="BalckHoleGame.h">
+      <Filter>MainClass</Filter>
+    </ClInclude>
+    <ClInclude Include="EarthWormGame.h">
+      <Filter>MainClass</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
