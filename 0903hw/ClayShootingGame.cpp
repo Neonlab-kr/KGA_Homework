@@ -116,6 +116,7 @@ void ClayShootingGame::update(void)
         GenerateTime = GetTickCount() + 500;
     }
 
+    //피격 판정
     if (KEYMANAGER->isOnceKeyDown(VK_LBUTTON))
     {
         for (auto& i : clayVector)

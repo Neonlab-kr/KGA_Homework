@@ -5,6 +5,7 @@ HRESULT WhirlwindBulletGame::init(void)
 {
     GameNode::init();
     angle = 0;
+    time = 0;
     return S_OK;
 }
 
@@ -16,17 +17,19 @@ void WhirlwindBulletGame::release(void)
 void WhirlwindBulletGame::update(void)
 {
     GameNode::update();
+    time++;
+
     //원 이동
     for (auto& i : circleList)
     {
-        i.cx += 3.0 * cos(i.angle * 3.14 / 180.0);
-        i.cy -= 3.0 * sin(i.angle * 3.14 / 180.0);
+        i.cx += speed * cos(i.angle * 3.141592 / 180.0);
+        i.cy -= speed * sin(i.angle * 3.141592 / 180.0);
     }
 
     //화면 밖으로 나간 원 제거
     for (auto it = circleList.begin(); it != circleList.end();)
     {
-        if (it->cx < -50 || it->cx > WINSIZE_X + 50 || it->cy < -50 || it->cy > WINSIZE_Y + 50)
+        if (it->cx < -radius || it->cx > WINSIZE_X + radius || it->cy < -radius || it->cy > WINSIZE_Y + radius)
         {
             it = circleList.erase(it);
         }
@@ -36,16 +39,24 @@ void WhirlwindBulletGame::update(void)
         }
     }
 
-    //각도 변경
-    angle += 25;
-
     //원 생성
-    Circle newCircle;
-    newCircle.cx = WINSIZE_X / 2;
-    newCircle.cy = WINSIZE_Y / 2;
-    newCircle.angle = angle;
-    circleList.push_back(newCircle);
-
+    if(time >= spawnCycle)
+    {
+        angle += 25;
+        Circle newCircle;
+        newCircle.cx = WINSIZE_X / 2;
+        newCircle.cy = WINSIZE_Y / 2;
+        newCircle.angle = angle;
+        circleList.push_back(newCircle);
+        time = 0;
+    }
+    
+    if (KEYMANAGER->isOnceKeyDown('R'))
+    {
+        angle = 0;
+        time = 0;
+        circleList.clear();
+    }
 }
 
 void WhirlwindBulletGame::render(HDC hdc)
@@ -55,7 +66,7 @@ void WhirlwindBulletGame::render(HDC hdc)
 
     for (auto& i : circleList)
     {
-        EllipseMakeCenter(memDC, i.cx, i.cy, 50, 50);
+        EllipseMakeCenter(memDC, i.cx, i.cy, radius, radius);
     }
 
     this->getBackBuffer()->render(hdc, 0, 0);

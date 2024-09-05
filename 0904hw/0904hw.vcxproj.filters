@@ -54,9 +54,6 @@
     <ClCompile Include="C3DVector.cpp">
       <Filter>API FrameWork\Utility\Math</Filter>
     </ClCompile>
-    <ClCompile Include="MainGame.cpp">
-      <Filter>MainClass</Filter>
-    </ClCompile>
     <ClCompile Include="GImage.cpp">
       <Filter>API FrameWork\Image</Filter>
     </ClCompile>
@@ -69,7 +66,7 @@
     <ClCompile Include="WhirlwindBulletGame.cpp">
       <Filter>MainClass</Filter>
     </ClCompile>
-    <ClCompile Include="BalckHoleGame.cpp">
+    <ClCompile Include="BlackHoleGame.cpp">
       <Filter>MainClass</Filter>
     </ClCompile>
     <ClCompile Include="EarthWormGame.cpp">
@@ -95,9 +92,6 @@
     <ClInclude Include="C3DVector.h">
       <Filter>API FrameWork\Utility\Math</Filter>
     </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>MainClass</Filter>
-    </ClInclude>
     <ClInclude Include="CommonMacroFunction.h">
       <Filter>API FrameWork\Utility</Filter>
     </ClInclude>
@@ -116,7 +110,7 @@
     <ClInclude Include="WhirlwindBulletGame.h">
       <Filter>MainClass</Filter>
     </ClInclude>
-    <ClInclude Include="BalckHoleGame.h">
+    <ClInclude Include="BlackHoleGame.h">
       <Filter>MainClass</Filter>
     </ClInclude>
     <ClInclude Include="EarthWormGame.h">
