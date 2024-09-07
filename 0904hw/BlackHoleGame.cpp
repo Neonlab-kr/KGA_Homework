@@ -92,6 +92,10 @@ void BlackHoleGame::render(HDC hdc)
         }
     }
 
+    char str[128];
+    sprintf_s(str, "count : %d", (int)BulletList.size());
+
+    TextOut(memDC,0,0,str,strlen(str));
 
     this->getBackBuffer()->render(hdc, 0, 0);
 }

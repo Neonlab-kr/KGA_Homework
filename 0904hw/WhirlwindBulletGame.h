@@ -16,7 +16,7 @@ class WhirlwindBulletGame : public GameNode
 private:
 	const int speed = 2;
 	const int radius = 50;
-	const int spawnCycle = 2;
+	const int spawnCycle = 1;
 
 	struct Circle
 	{

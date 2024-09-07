@@ -40,7 +40,7 @@ void WhirlwindBulletGame::update(void)
     }
 
     //¿ø »ý¼º
-    if(time >= spawnCycle)
+    if ((time >= spawnCycle))
     {
         angle += 25;
         Circle newCircle;
@@ -61,6 +61,7 @@ void WhirlwindBulletGame::update(void)
 
 void WhirlwindBulletGame::render(HDC hdc)
 {
+    char str[128];
     HDC memDC = this->getBackBuffer()->getMemDC();
     PatBlt(memDC, 0, 0, WINSIZE_X, WINSIZE_Y, BLACKNESS);
 

@@ -179,6 +179,7 @@ void MainScene::render(HDC hdc)
     {
         TextOut(hdc, button[i].left + 5, (button[i].top + button[i].bottom) / 2 - 5, buttonStr[i], strlen(buttonStr[i]));
     }
+
     _curImage->frameRender(hdc, _curImage->getX(), _curImage->getY());
     
     if (selButtonNum == 10)
