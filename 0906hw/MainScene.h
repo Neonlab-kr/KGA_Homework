@@ -58,6 +58,7 @@ private:
 	bool _isMoving;
 	bool _inAir;
 	bool _onWall;
+	bool _onPaddle;
 
 public:
 	HRESULT init(void);

@@ -73,8 +73,8 @@ void MainScene::render(HDC hdc)
     {
         _paddleImage->frameRender(hdc, _paddleRc[i].left - 2, _paddleRc[i].top);
     }
-
     _plImage->frameRender(hdc, _plImage->getX() + _playerPosX, _plImage->getY() - _playerPosY);
+
 
     GImage _minimap;
     _minimap.init(WINSIZE_X/4, WINSIZE_Y/4);
@@ -107,8 +107,6 @@ void MainScene::applyPlayerInput()
         }
     }
 
-
-
     if (KEYMANAGER->isStayKeyDown(VK_UP) && _onWall && _inAir)
     {
         _playerDy = moveSpeed/2;
@@ -125,6 +123,10 @@ void MainScene::applyPlayerInput()
         {
             _playerPosX -= moveSpeed * 2;
             _playerDy = jumpHeight;
+        }
+        else if (KEYMANAGER->isStayKeyDown(VK_DOWN) && _onPaddle)
+        {
+            _playerDy = -5;
         }
         else if(!_inAir) _playerDy = jumpHeight;
     }
@@ -158,13 +160,15 @@ void MainScene::handleGroundCollision(RECT& playerBB)
     //발판 밟았는지 확인
     for (int i = 0; i < 4; i++)
     {
-        if (playerBB.right > _paddleRc[i].left && playerBB.left < _paddleRc[i].right && playerBB.bottom >= _paddleRc[i].top && playerBB.bottom < _paddleRc[i].bottom && _playerDy <= 0)
+        if (playerBB.right > _paddleRc[i].left && playerBB.left < _paddleRc[i].right && playerBB.bottom >= _paddleRc[i].top && playerBB.bottom < _paddleRc[i].top + 15 && _playerDy <= 0)
         {
             _playerPosY = WINSIZE_Y - _paddleRc[i].top - floor;
             _playerDy = 0;
             _inAir = false;
+            _onPaddle = true;
             return;
         }
+        else _onPaddle = false;
     }
 
     //벽 밟았는지 확인
@@ -174,8 +178,7 @@ void MainScene::handleGroundCollision(RECT& playerBB)
         _playerDy = 0;
         _inAir = false;
         return;
-    }
-
+    }   
     _inAir = true;
 }
 
@@ -317,4 +320,12 @@ void MainScene::debugMode(HDC hdc)
     if (_isMoving) sprintf_s(str, "_isMoving : true");
     else sprintf_s(str, "_isMoving : false");
     TextOut(hdc, 10, 110, str, strlen(str));
+
+    if (_onWall) sprintf_s(str, "_onWall : true");
+    else sprintf_s(str, "_onWall : false");
+    TextOut(hdc, 10, 130, str, strlen(str));
+
+    if (_onPaddle) sprintf_s(str, "_onPaddle : true");
+    else sprintf_s(str, "_onPaddle : false");
+    TextOut(hdc, 10, 150, str, strlen(str));
 }
